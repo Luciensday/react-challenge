@@ -1,21 +1,18 @@
-import { userState } from "react" 
+import { useState } from "react" 
 
 
-function Shouter(props){
-    const [text, setText ] = userState("")
-
-    function uppercase(event){
-        setText(event.target.value)
+function Shouter(){
+    const [message,  setMessage] = useState("")
+    function update(event) {
+        setMessage(event.target.value)
     }
+
     return (
     <>
-    <input value={text} onChange={uppercase} />
-    <output>{text.toUpperCase()}</output>
+    <input value={message} onChange={update} />
+    <output>{message.toUpperCase()}</output>
     </>
     )
-
-    
-   
 
 }
 
